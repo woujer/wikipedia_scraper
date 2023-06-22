@@ -77,7 +77,6 @@ def get_leaders():
 leaders_per_country = get_leaders()
 print("Leaders per country:", leaders_per_country)
 
-
 #We gonna request the url of Pressident Emmanuel Macron and recieve a full HTML file.
 leader_url = "https://nl.wikipedia.org/wiki/Abraham_Lincoln"
 req = requests.get(leader_url)
@@ -151,12 +150,11 @@ def get_leaders():
     leaders_url = root_url + "/leaders"
 
     try:
-        # Get initial cookies
+        # Get Cookie
         cookies = requests.get(cookie_url).cookies
 
-        # Check if status code indicates a cookie error
-        if requests.get(status_url, cookies=cookies).status_code == 401:
-            # Refresh cookies
+        # Check status code cookie
+        if requests.get(status_url, cookies=cookies).status_code == 422:
             cookies = requests.get(cookie_url).cookies
 
         # Check status code of /status endpoint
@@ -177,8 +175,7 @@ def get_leaders():
             req = requests.get(leaders_url, params=leaders_params, cookies=cookies)
 
             # Check if status code indicates a cookie error
-            if req.status_code == 401:
-                # Refresh cookies
+            if req.status_code == 403:
                 cookies = requests.get(cookie_url).cookies
 
                 # Retry getting leaders for the current country
@@ -192,6 +189,6 @@ def get_leaders():
     except requests.exceptions.RequestException as e:
         return "Error: " + str(e)
 
-leaders_per_country = get_leaders()
-print(leaders_per_country)
+
+print(get_leaders())
 
