@@ -23,7 +23,7 @@ Get  JSON content and store it in the countres variable and display the request'
 and countries variabel"""
 countries_url = root_url + "/countries"  
 req = requests.get(countries_url)  
-countries = req.json()  
+countries = req.json()
 print("Request status code:", req.status_code)  
 print("Countries :", countries) 
 
@@ -54,7 +54,7 @@ def get_leaders():
     leaders_url = root_url + "/leaders"
     
     s = requests.Session()
-    cookies = s.get(cookie_url).cookies 
+
     
     req = s.get(status_url)
     if req.status_code != 200:
@@ -139,9 +139,6 @@ def get_first_paragraph(wikipedia_url):
 
 """EXTRA EXERCISE FOR THE END COME UP WITH OTHER regexes to capture other patterns"""
 
-# < 20 lines
-import requests
-
 def get_leaders():
     root_url = "https://country-leaders.onrender.com"
     status_url = root_url + "/status/"
@@ -157,14 +154,6 @@ def get_leaders():
         if requests.get(status_url, cookies=cookies).status_code == 422:
             cookies = requests.get(cookie_url).cookies
 
-        # Check status code of /status endpoint
-        if requests.get(status_url, cookies=cookies).status_code != 200:
-            return "Error: /status endpoint returned an error"
-
-        # Check status code of /countries endpoint
-        if requests.get(countries_url, cookies=cookies).status_code != 200:
-            return "Error: /countries endpoint returned an error"
-
         # Get countries
         countries = requests.get(countries_url, cookies=cookies).json()
 
@@ -175,7 +164,7 @@ def get_leaders():
             req = requests.get(leaders_url, params=leaders_params, cookies=cookies)
 
             # Check if status code indicates a cookie error
-            if req.status_code == 403:
+            if req.status_code == 422:
                 cookies = requests.get(cookie_url).cookies
 
                 # Retry getting leaders for the current country
@@ -189,6 +178,8 @@ def get_leaders():
     except requests.exceptions.RequestException as e:
         return "Error: " + str(e)
 
+leaders = get_leaders()
+print(leaders)
 
-print(get_leaders())
+
 
