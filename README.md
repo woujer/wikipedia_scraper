@@ -1,10 +1,7 @@
 # Wikipedia Scraper Wouter Daneels
-
- ## Info
  ![Alt text](https://duckduckgo.com/i/0cc93634.png "a title")
+ ## Info
 This project was made over the course of 3 days as a exercise of BeCode. In this code we will scrape information from wikipedia (Leaders) and we will doe all kinds of things with it. 
-
-
 
 ### How to use
 For usage you will have to install **Python 3+** to open the file make sure you have a code enviremont installed or a CMD/shell you will be able to open the file after download.
@@ -12,3 +9,5 @@ For usage you will have to install **Python 3+** to open the file make sure you 
      2. After going to the right path you can simpely type ***python main.py***
      3. You succesfully opened the file
      
+### Proces
+The proces of making this was made by following the BeCode jupyter notebook about wikipedia scraping following the exercises made me realise this at the end ofcourse you need to do alot of your own research work. We made first of all evrything loose and added them all together in the end in multiple functions
