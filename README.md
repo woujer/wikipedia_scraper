@@ -1,5 +1,5 @@
 # Wikipedia Scraper Wouter Daneels
- ![Alt text](https://duckduckgo.com/i/0cc93634.png "a title")
+ ![Alt text](https://duckduckgo.com/i/0cc93634.png "a title")  ![Alt text](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fimage_gallery%2F466851.jpg&f=1&nofb=1&ipt=460f58f4c3a655c4cd6aaab1522cce9cf79c0c12cc99b0c7e45e8340898866ee&ipo=images "a title") 
  ## Info
 This project was made over the course of 3 days as a exercise of BeCode. In this code we will scrape information from wikipedia (Leaders) and we will doe all kinds of things with it. 
 
