@@ -2,7 +2,7 @@
 
  ## Info
  ![Alt text](https://duckduckgo.com/i/0cc93634.png "a title")
-This project was made over the course of 3 days as a exercise of BeCode. In this code we will scrape information from wikipedia (Leaders) and we will doe all kinds of things with it. ![Alt text](https://duckduckgo.com/i/0cc93634.png "a title")
+This project was made over the course of 3 days as a exercise of BeCode. In this code we will scrape information from wikipedia (Leaders) and we will doe all kinds of things with it. 
 
 
 
