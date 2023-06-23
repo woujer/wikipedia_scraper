@@ -17,7 +17,7 @@ if req.status_code == 200:
     print("Response:", req.text)  
 else:
     print("Request failed with status code:", req.status_code)  
-    
+
 #Function get leaders is already the last modifyt version
 def get_leaders():
     root_url = "https://country-leaders.onrender.com"
@@ -64,29 +64,6 @@ def get_leaders():
         return "Error: " + str(e)
 
 #Function get first paragraph but it's cleaned up 
-def get_first_paragraph(wikipedia_url):
-    # Retrieve the HTML content from the Wikipedia URL
-    response = requests.get(wikipedia_url)
-    html_content = response.content
-
-    # Create a BeautifulSoup object for parsing the HTML
-    soup = BeautifulSoup(html_content, "html.parser")
-
-    # Find the first paragraph element
-    first_paragraph = soup.find("p")
-
-    # Extract the text from the first paragraph
-    first_paragraph_text = first_paragraph.get_text()
-
-    # Apply regular expressions to sanitize the text only thing we don't return are the anchors and wiki link
-    sanitized_text = re.sub(r"\[\d+]|\[\/?\w+\]", "", first_paragraph_text)
-    sanitized_text = re.sub(r"<.*?>", "", sanitized_text)
-    return sanitized_text
-
-#testing sanitezed get first paragraph
-wikipedia_url = "https://nl.wikipedia.org/wiki/Abraham_Lincoln"
-first_paragraph = get_first_paragraph(wikipedia_url)
-print(first_paragraph)
 
 #Modifyt version of get first paragraph
 def get_first_paragraph(wikipedia_url, session):
