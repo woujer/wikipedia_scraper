@@ -3,6 +3,21 @@ from bs4 import BeautifulSoup
 import re
 import json
 
+"""Assign the root URL to the root_url variable
+Assign the /status endpoint URL to the status_url variable
+Send a GET request to the /status endpoint and store the response in req"""
+root_url = "https://country-leaders.onrender.com"  
+status_url = root_url + "/status/"  
+req = requests.get(status_url) 
+
+
+# Check the status_code of the response and print response
+if req.status_code == 200:  
+    print("Successful!")  
+    print("Response:", req.text)  
+else:
+    print("Request failed with status code:", req.status_code)  
+    
 #Function get leaders is already the last modifyt version
 def get_leaders():
     root_url = "https://country-leaders.onrender.com"
